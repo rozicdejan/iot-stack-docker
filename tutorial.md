@@ -9,6 +9,14 @@ Verify that the Docker Engine installation is successful by running the hello-wo
     sudo docker run hello-world
 This command downloads a test image and runs it in a container. When the container runs, it prints a confirmation message and exits.
 
+### Add Group docker
+    sudo groupadd docker
+### Add user to docker group
+    sudo usermod -aG docker $USER
+### Activate the changes to groups
+    newgrp docker
+## Verify that you can run docker commands without sudo
+     docker run hello-world    
 ## Step 3: Clone GitHub stack
     git clone https://github.com/rozicdejan/iot-stack-docker.git
 ## Step 4: Change docker-compose file
