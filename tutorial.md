@@ -4,6 +4,11 @@ works for Ubuntu/Debian system
     sudo apt-get install git-all
 ## Step 2. Install Docker 
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+or
+
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sh get-docker.sh
 Verify that the Docker Engine installation is successful by running the hello-world image.
 
     sudo docker run hello-world
