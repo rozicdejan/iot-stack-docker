@@ -167,7 +167,7 @@ Explanation:
 
 The -d flag runs the containers in detached mode (in the background).
 
-###Verify the Containers are Running
+### Verify the Containers are Running
 
 You can verify that your containers are running with:
 
@@ -175,8 +175,8 @@ You can verify that your containers are running with:
 This command lists all running containers. You should see entries for node-red, influxdb, grafana, homeassistant, mosquitto, and zigbee2mqtt.
 
 ### Access the Services
-Home Assistant: http://<your-server-ip>:8123
-Node-RED: http://<your-server-ip>:1880
-Grafana: http://<your-server-ip>:3000
-InfluxDB: http://<your-server-ip>:8086
-Replace <your-server-ip> with the actual IP address of your server.
+    Home Assistant: http://<your-server-ip>:8123
+    Node-RED: http://<your-server-ip>:1880
+    Grafana: http://<your-server-ip>:3000
+    InfluxDB: http://<your-server-ip>:8086
+    Replace <your-server-ip> with the actual IP address of your server.
