@@ -1,8 +1,8 @@
 portainer-ce:
         ports:
-            - 8500:8000
-            - 9843:9443
-            - 9500:9000
+            - 8501:8000
+            - 9844:9443
+            - 9501:9000
         container_name: portainer2
         restart: always
         volumes:
