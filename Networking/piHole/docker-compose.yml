@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    environment:
+      TZ: 'Europe/Ljubljana'  # Set to your timezone
+      WEBPASSWORD: 'yourpassword'  # Optional: Set a password for the Pi-hole web interface
+    volumes:
+      - './etc-pihole:/etc/pihole'
+      - './etc-dnsmasq.d:/etc/dnsmasq.d'
+    ports:
+      - '53:53/tcp'
+      - '53:53/udp'
+      - '67:67/udp' # Required for DHCP if you want Pi-hole to act as your DHCP server
+      - '80:80/tcp'
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN  # Required if you want Pi-hole to act as your DHCP server
+
+networks:
+  default:
+    name: pihole_network
+    driver: bridge
