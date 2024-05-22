@@ -1,15 +1,15 @@
 portainer-ce:
         ports:
-            - 8000:8000
-            - 9443:9443
-            - 9000:9000
-        container_name: portainer
+            - 8500:8000
+            - 9843:9443
+            - 9500:9000
+        container_name: portainer2
         restart: always
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
-            - portainer_data:/data
+            - portainer_data2:/data
         image: portainer/portainer-ce:latest
 volumes:
-    portainer_data:
+    portainer_data2:
         external: true
-        name: portainer_data
+        name: portainer_data2
