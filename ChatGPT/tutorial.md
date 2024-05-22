@@ -1,4 +1,6 @@
-# Full Procedure with Docker and Portainer Installation
+# Full Procedure with Docker and Portainer Installatio
+## install docker - new
+    curl -fsSL https://get.docker.com -o get-docker.sh
 Here is the complete procedure, including Docker and Portainer installation along with the steps to configure Docker for non-root usage:
 
 ## Update the system:
