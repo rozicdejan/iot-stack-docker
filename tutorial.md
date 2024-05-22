@@ -24,3 +24,5 @@ move to DIR and compose file
 
     cd iot-stack-docker/
     docker-compose up -d //inside same DIR as  docker-compose.yaml
+
+More info: https://www.youtube.com/watch?v=mzYdsPUI1TA&ab_channel=PhilippEchteler
