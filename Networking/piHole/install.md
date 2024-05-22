@@ -6,4 +6,5 @@
 ## Start Pi-hole: Run the following command to start Pi-hole with Docker Compose:
 
     docker-compose up -d
-Access Web Interface: Open your web browser and navigate to http://<your_host_ip> to access the Pi-hole web interface. Use the password specified in the WEBPASSWORD environment variable to log in.
+## Access Web Interface
+Open your web browser and navigate to http://<your_host_ip>:port/admin to access the Pi-hole web interface. Use the password specified in the WEBPASSWORD environment variable to log in.
