@@ -1,5 +1,6 @@
+# Install via Docker compose file
 https://github.com/rozicdejan/uptime-kuma-docker.git
-
+# Install via run .install.sh script
 if you dont want to install as docker and git file you can simpy run ./install.sh
 
 Explain:
