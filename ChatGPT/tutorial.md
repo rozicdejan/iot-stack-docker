@@ -162,10 +162,14 @@ You will need a docker-compose.yaml file that defines these services. Below is a
     This setup will give you a complete smart home monitoring and control stack with Node-RED, InfluxDB, Grafana, Home Assistant, Zigbee2MQTT, and Mosquitto.
 
 ## Instructions - Install in terminal:
-Run the Docker Compose file with the following command:
-
+### Download git files
+    git clone https://github.com/rozicdejan/iot-stack-docker.git
+### Change DIR
+    cd iot-stack-docker/ChatGPT/
+### Change docker compose file if needed
+    nano ./docker-compose.yaml
+## Run the Docker Compose file with the following command:
     docker-compose up -d
-
 Explanation:
 
 The -d flag runs the containers in detached mode (in the background).
