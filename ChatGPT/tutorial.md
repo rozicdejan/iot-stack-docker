@@ -6,24 +6,24 @@ Here is the complete procedure, including Docker and Portainer installation alon
     sudo apt-get update
     sudo apt-get upgrade -y
     
-## install docker - new
+## Install docker - try this
     curl -fsSL https://get.docker.com -o get-docker.sh
     
-## Install Docker:
-
-    sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    sudo apt-get update
-    sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-    sudo systemctl enable docker
-    sudo systemctl start docker
-  
-## Install Docker Compose:
-
-    sudo curl -L "https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    sudo chmod +x /usr/local/bin/docker-compose
-## Configure Docker to be used without sudo:
+        ## Install Docker: if installer top didnt work
+        
+            sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+            curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+            echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+            sudo apt-get update
+            sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+            sudo systemctl enable docker
+            sudo systemctl start docker
+          
+        ## Install Docker Compose:
+        
+            sudo curl -L "https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+            sudo chmod +x /usr/local/bin/docker-compose
+        ## Configure Docker to be used without sudo:
 
     sudo groupadd docker
     sudo usermod -aG docker $USER
