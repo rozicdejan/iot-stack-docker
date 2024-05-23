@@ -1,13 +1,9 @@
-#Installation
-## 1 git clone ior-strack-docker
+# How to use folder
+1. Run shell script with command
+  ./install.sh
 
-git clone
-cd to /piHole/
-#run shell script
-./install.sh
-  
-## 2 install via docker - CLI
-create DIR
+
+
 
 
 
