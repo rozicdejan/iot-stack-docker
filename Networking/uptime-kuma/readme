@@ -1,1 +1,3 @@
 https://github.com/rozicdejan/uptime-kuma-docker.git
+
+if you dont want to install as docker and git file you can simpy run ./install.sh
