@@ -33,16 +33,6 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=adminpassword
 
-  homeassistant:
-    image: homeassistant/home-assistant:stable
-    container_name: homeassistant
-    volumes:
-      - homeassistant_data:/config
-    environment:
-      - TZ=Europe/Ljubljana
-    restart: unless-stopped
-    network_mode: host
-
   mosquitto:
     image: eclipse-mosquitto
     container_name: mosquitto
@@ -70,7 +60,6 @@ volumes:
   node_red_data:
   influxdb_data:
   grafana_data:
-  homeassistant_data:
   mosquitto_data:
   mosquitto_config:
   mosquitto_logs:
