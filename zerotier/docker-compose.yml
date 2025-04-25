@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  zerotier:
+    # Use the official ZeroTier Docker image
+    image: zerotier/zerotier
+
+    # Set the container name for easy reference
+    container_name: zerotier
+
+    # Use host network mode so ZeroTier can manage network interfaces directly.
+    # This is generally required for ZeroTier to create virtual network interfaces on the host.
+    network_mode: host
+
+    # Grant necessary capabilities for ZeroTier to manage network devices
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+
+    # Provide access to the /dev/net/tun device, which ZeroTier needs
+    devices:
+      - /dev/net/tun:/dev/net/tun
+
+    # Mount a volume to persist the ZeroTier identity and configuration.
+    # This ensures your ZeroTier node ID remains the same across container restarts and updates.
+    volumes:
+      - zerotier_identity:/var/lib/zerotier-one
+
+    # Restart the container automatically if it stops
+    restart: unless-stopped
+
+    # Command to run ZeroTier and join a specific network.
+    # Replace YOUR_NETWORK_ID with your actual ZeroTier network ID.
+    # You can remove the 'join YOUR_NETWORK_ID' part if you prefer to join networks manually
+    # after the container is running using 'docker exec zerotier zerotier-cli join <network-id>'.
+    command: zerotier-one -q join YOUR_NETWORK_ID
+
+volumes:
+  # Define the volume for persisting ZeroTier data
+  zerotier_identity:
+    driver: local
