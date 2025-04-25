@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  netbird-client:
+    # Use the official NetBird Docker image
+    image: netbirdio/netbird:latest
+
+    # Set the container name
+    container_name: netbird-client
+
+    # Use host network mode for proper network interface management by NetBird
+    network_mode: host
+
+    # Grant necessary capabilities for NetBird to manage network devices and routes
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+      # SYS_RESOURCE might be needed on some kernels, include it for broader compatibility
+      - SYS_RESOURCE
+
+    # Provide access to the /dev/net/tun device
+    devices:
+      - /dev/net/tun:/dev/net/tun
+
+    # Mount a volume to persist the NetBird configuration and identity
+    volumes:
+      - netbird_config:/etc/netbird
+
+    # Restart the container automatically
+    restart: unless-stopped
+
+    # Set environment variables for the NetBird client
+    environment:
+      # Replace with your actual NetBird setup key
+      # You can generate this key in your NetBird Management Panel
+      - NB_SETUP_KEY=YOUR_NETBIRD_SETUP_KEY
+      # Optional: Set a hostname for the peer in the NetBird network
+      # - NB_HOSTNAME=my-docker-peer
+      # Optional: Set log level (trace, debug, info, warn, error)
+      # - NB_LOG_LEVEL=info
+
+    # Command to run the NetBird service
+    # Using 'netbird service run' is recommended for Docker
+    command: netbird service run
+
+volumes:
+  # Define the volume for persisting NetBird data
+  netbird_config:
+    driver: local
